@@ -1,0 +1,33 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# IDE/Editor directories
+.vscode/
+.idea/
+
+# Dependency directories
+*.egg-info/
+dist/
+build/
+
+# Environment variables and sensitive data
+.env
+
+# Logs
+*.log
+
+# Migrations
+migrations/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Uvicorn PID file
+*.pid
