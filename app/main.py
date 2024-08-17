@@ -15,14 +15,14 @@ async def checkin():
 
     # Send a message to a specific user or chat
     # Replace 'user_id_or_username' with the target user ID or username
-    await client.send_message('@jossyfresh_bot', '/start')
+    await client.send_message('@A2SVBouncerbot', '/checkin')
 async def checkout():
     # Connect to Telegram servers
     await client.start(phone_number)
 
     # Send a message to a specific user or chat
     # Replace 'user_id_or_username' with the target user ID or username
-    await client.send_message('@jossyfresh_bot', '/start')
+    await client.send_message('@A2SVBouncerbot', '/checkout')
 
     # You can also add event handlers here to respond to messages or other events
 app = FastAPI()
