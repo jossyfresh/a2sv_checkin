@@ -44,7 +44,7 @@ async def checkout():
     await client.start(phone_number)
 
     # Send a message to the bot to initiate the checkout process
-    await client.send_message('@A2SVBouncerbot', '/checkout')
+    await client.send_message('@A2SVBouncerbot', '/checkou')
 
 # Initialize FastAPI
 app = FastAPI()
