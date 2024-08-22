@@ -23,7 +23,6 @@ async def checkin():
     @client.on(events.NewMessage(from_users='@A2SVBouncerbot'))
     async def handler(event):
         message = event.message
-        print(message)
         if message.buttons:
             # Find the button with "AASTU In Person" text and click it
             for row in message.buttons:
@@ -45,6 +44,23 @@ async def checkout():
 
     # Send a message to the bot to initiate the checkout process
     await client.send_message('@A2SVBouncerbot', '/checkout')
+    
+    @client.on(events.NewMessage(from_users='@A2SVBouncerbot'))
+    async def handler(event):
+        message = event.message
+        if message.buttons:
+            # Find the button with "AASTU In Person" text and click it
+            for row in message.buttons:
+                for button in row:
+                    if button.text == 'Check out':
+                        await client(GetBotCallbackAnswerRequest(
+                            peer=message.peer_id,
+                            msg_id=message.id,
+                            data=button.data
+                        ))
+                        print("Clicked 'AASTU In Person'")
+                        return
+
 
 # Initialize FastAPI
 app = FastAPI()
@@ -52,10 +68,6 @@ app = FastAPI()
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
 
 @app.get("/checkin")
 async def check_in():
