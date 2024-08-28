@@ -34,7 +34,9 @@ async def checkin():
                             data=button.data
                         ))
                         print("Clicked 'AASTU In Person'")
+                        client.disconnect()
                         return
+
         # Run the event handler
 
 async def checkout():
