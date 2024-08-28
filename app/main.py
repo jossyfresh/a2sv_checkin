@@ -44,7 +44,6 @@ async def checkout():
     # Connect to Telegram servers
     await client.start(phone_number)
 
-    # Send a message to the bot to initiate the checkout process
     await client.send_message('@A2SVBouncerbot', '/checkout')
     
     @client.on(events.NewMessage(from_users='@A2SVBouncerbot'))
